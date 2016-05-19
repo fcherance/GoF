@@ -1,3 +1,16 @@
+# User Interface Script -----------------------------------------------------------
+# Title:        ROC curve sensitivity to underlying distribution of classes
+# Author:       Fabien CHERANCE
+# Date:         19 May 2016
+# Mantainer:    Fabien CHERANCE <fabien.cherance@gmail.com>
+# Description:  Setting a variaty of spreads between a Low Propensity Class
+#               and a High Propensity Class, and a variaty of imbalances
+#               of the original classes. 
+#               We measure the values of AUC as shortcut for the GINI
+#               as sensitivities of the two parameters.
+#               Predictions are the "real" propensities, the ones used to generate
+#               the observations.
+
 library(shiny)
 
 # Define UI for miles per gallon application
@@ -18,9 +31,7 @@ shinyUI(fluidPage(
                   min = 1,  max = 100,  value = 10)
     ),
   
-    
-    # Show the caption and plot of the requested variable against
-    # mpg
+    # Show the caption and plot
     mainPanel(
       plotOutput("Curve")
     )
